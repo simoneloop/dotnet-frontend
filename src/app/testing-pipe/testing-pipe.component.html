@@ -1,0 +1,24 @@
+<div>
+    <form #database="ngForm" (ngSubmit)="add(database.value)" class="city-form">
+        <input type="text" ngModel name="city" placeholder="inserisci nome città">
+        <input type="number" ngModel name="population" placeholder="N. abitanti">
+        <textarea type="text" ngModel name="description" placeholder="inserisci descrizione della città"></textarea>
+        <button class="form-button">Inserisci</button>
+    </form>
+    <div>
+        <input type="text" [(ngModel)]="searchTerm" name="search" #searchInput="ngModel">
+    </div>
+      
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let item of data | search:searchTerm">
+            <h1>{{item.city}}</h1>
+            <p>Abitanti: {{item.population}}</p>
+            <p>Descrizione: {{item.description}}</p>
+        </li>
+    </ul>
+</div>
+
+

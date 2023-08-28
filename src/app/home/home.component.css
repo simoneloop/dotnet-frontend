@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    margin: 2em;
+
+}
+.view{
+    display: flex;
+    margin: 2em;
+}
+.list-container{
+    flex-grow: 2;
+}

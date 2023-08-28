@@ -1,0 +1,16 @@
+.infos{
+    display: flex;
+    justify-content: space-around;
+
+}
+.employee-card{
+    margin: 1em 1em 1em 1em;
+    text-align: center;
+    border-bottom: solid 1px #85a7c8;
+    padding-bottom: 2em;
+}
+.buttons{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}

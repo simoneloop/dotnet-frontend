@@ -1,0 +1,32 @@
+<div>
+    <div class="container">
+        <div>
+            <h1 style="flex-grow: 2;text-align: center;">I tuoi impiegati</h1>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Cerca per nome</mat-label>
+                <input [formControl]="search" matInput>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+        
+        <button mat-fab color="accent" routerLink="add" extended="">
+            aggiungi!
+            <mat-icon>add_circle</mat-icon>
+          </button>
+    </div>
+    <div class="view">
+        <div class="list-container">
+            <ul style="list-style: none;">
+                <li *ngFor="for let i of employees | searchEmployee:search.value">
+                    <app-employee-card [employee]=i></app-employee-card>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <p><span class="category">SALARIO TOTALE:</span> {{totalSalary}}</p>
+        </div>
+    </div>
+    
+    
+</div>
