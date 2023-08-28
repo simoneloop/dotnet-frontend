@@ -10,17 +10,17 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   public loadEmployees():Observable<Employee[]>{
-    return this.http.get<Employee[]>('http://localhost:5206/Employee');
+    return this.http.get<Employee[]>('http://localhost:5000/Employee');
 
   }
 
   createEmployee(e:Employee):Observable<Employee>{
-    return this.http.post<Employee>('http://localhost:5206/Employee',e);
+    return this.http.post<Employee>('http://localhost:5000/Employee',e);
   }
   deleteEmployee(i:string):Observable<Employee>{
-    return this.http.delete<Employee>('http://localhost:5206/Employee/'+i);
+    return this.http.delete<Employee>('http://localhost:5000/Employee/'+i);
   }
   totalSalary():Observable<Number>{
-    return this.http.get<Number>('http://localhost:5206/Employee/totalSalary');
+    return this.http.get<Number>('http://localhost:5000/Employee/totalSalary');
   }
 }
