@@ -27,7 +27,7 @@ export interface EmployeeDepartment{
     department:Department
 }
 export interface EmployeeRequest{
-    id:string;
+    id:number;
     name:string;
     email:string;
     phone:number;

@@ -21,6 +21,7 @@ export class DetailsComponent {
 
   constructor(private activatedroute:ActivatedRoute,private formBuilder:FormBuilder, private apiService:ApiService){
     this.employee=this.formBuilder.group({
+      id:[''],
       name:[this.selected?.name,Validators.required],
       email:[this.selected?.email,Validators.required],
       phone:[this.selected?.phone,Validators.required],
@@ -41,6 +42,7 @@ export class DetailsComponent {
           this.departments.forEach((dept)=>{this.departmentNames.push(dept.name)})
         }
         this.employee.patchValue({
+          id:Number.parseInt(this.id),
           name: this.selected.name,
           email: this.selected.email,
           phone: this.selected.phone,
