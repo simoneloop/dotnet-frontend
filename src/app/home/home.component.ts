@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Employee } from '../model';
 import { ApiService } from '../services/api.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,9 @@ export class HomeComponent implements OnInit {
   public employees:Employee[]=[];
   public totalSalary:Number=0;
   public search:FormControl;
+  
 
-  public constructor(private http:HttpClient, private apiService: ApiService){
+  public constructor(private http:HttpClient, private apiService: ApiService, private router:Router){
     this.search=new FormControl('');
   }
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class HomeComponent implements OnInit {
       this.totalSalary=salary;
     })
   }
-
+ 
 
  
 

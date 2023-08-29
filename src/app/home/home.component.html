@@ -18,9 +18,12 @@
     <div class="view">
         <div class="list-container">
             <ul style="list-style: none;">
-                <li *ngFor="for let i of employees | searchEmployee:search.value">
-                    <app-employee-card [employee]=i></app-employee-card>
-                </li>
+                
+                    <li *ngFor="for let i of employees | searchEmployee:search.value">
+                        <div>
+                            <app-employee-card [employee]=i></app-employee-card>
+                        </div>
+                    </li>
             </ul>
         </div>
         <div>

@@ -1,16 +1,19 @@
 <div class="employee-card">
-    <h2>{{employee.name}}</h2>
-    <div class="infos">
-        <div>
+    <div  class="title-button">
+        <span >{{employee.name}}</span>
+    </div>
+    
+    <div  class="infos">
+        <div >
             <p><span class="category">EMAIL: </span>{{employee.email}}</p>
             <p><span class="category">CELLULARE: </span>{{employee.phone}}</p>
         </div>
         <div>
             <p><span class="category">SALARIO: </span>{{employee.salary}}</p>
-            <p><span class="category">DIPARTIMENTO: </span>{{employee.department}}</p>
+            <p *ngFor="let d of employee.employeeDepartments"><span class="category">DIPARTIMENTO: </span>{{d.department.name}}</p>
         </div>
         <div class="buttons">
-            <button mat-fab color="accent" routerLink="details{{employee.id}}">
+            <button mat-fab color="accent" [routerLink]="['details',employee.id]">
                 <mat-icon>edit</mat-icon>
               </button>
             <button mat-fab color="warn" (click)="delete(employee.id)">

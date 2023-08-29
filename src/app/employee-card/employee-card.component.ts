@@ -20,7 +20,5 @@ export class EmployeeCardComponent {
       
     });
   }
-  stampFromEdit():void{
-    console.log("hello from edit")
-  }
+  
 }

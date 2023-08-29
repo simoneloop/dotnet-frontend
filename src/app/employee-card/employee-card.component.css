@@ -8,9 +8,19 @@
     text-align: center;
     border-bottom: solid 1px #85a7c8;
     padding-bottom: 2em;
+    
 }
 .buttons{
     width: 20%;
     display: flex;
     justify-content: space-around;
+}
+.title-button{
+    cursor: pointer;
+    border: solid 1px gray;
+    border-radius: 1em;
+    margin: 2em;
+}
+.title-button:hover{
+    background-color: rgb(255, 218, 148);
 }

@@ -1,1 +1,36 @@
-<p>details works!</p>
+<div *ngIf="selected!=null" class="form-container">
+    <form [formGroup]="employee" class="form-container">
+        <h2>Aggiorna l'impiegato: {{selected.name}}</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>inserisci il nome</mat-label>
+            <input matInput formControlName="name" >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>inserisci l'email</mat-label>
+            <input matInput type="text"  formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>inserisci il numero</mat-label>
+            <input matInput type="text"  formControlName="phone">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>inserisci il salario</mat-label>
+            <input matInput type="number"  formControlName="salary">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>Scegli il dipartimento</mat-label>
+            <mat-select formControlName="departmentIds" multiple>
+              <mat-option *ngFor="let i of departments" value="{{i.id}}">{{i.name}}</mat-option>
+              
+            </mat-select>
+        </mat-form-field>
+
+        
+        
+        <button mat-fab color="primary" (click)="aggiorna()" extended="">
+            Aggiorna
+            <mat-icon>check_circle</mat-icon>
+        </button>
+    </form>
+</div>

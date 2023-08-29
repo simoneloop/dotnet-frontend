@@ -27,15 +27,15 @@
             
             <mat-form-field>
                 <mat-label>Scegli il dipartimento</mat-label>
-                <mat-select formControlName="department">
-                  <mat-option value="salute">Salute</mat-option>
-                  <mat-option value="giustizia">Giustizia</mat-option>
+                <mat-select formControlName="departmentIds" multiple>
+                  <mat-option *ngFor="let i of departments" value="{{i.id}}">{{i.name}}</mat-option>
+                  
                 </mat-select>
             </mat-form-field>
     
             
             
-            <button mat-fab color="primary" (click)="stampa()" extended="">
+            <button mat-fab color="primary" (click)="crea()" extended="">
                 Aggiungi
                 <mat-icon>check_circle</mat-icon>
             </button>
